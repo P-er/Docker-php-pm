@@ -49,10 +49,10 @@ RUN curl -L -o /tmp/php-pm.tar.gz https://github.com/php-pm/php-pm/archive/maste
 
 #RUN ln -s /php-pm-master/bin/ppm /usr/local/bin/ppm
 ENV TERM=xterm-256color
-
+RUN composer create-project symfony/framework-standard-edition symfony
 
 #RUN mkdir /www/
-WORKDIR /www/
+WORKDIR /www/symfony/
 # Entry point
 EXPOSE 8080
 CMD ["ppm", "start", "--cgi-path=/usr/bin/php7.0-cgi","--bootstrap=Symfony","--bridge=HttpKernel","--socket-path=/root/ppm/run"]
