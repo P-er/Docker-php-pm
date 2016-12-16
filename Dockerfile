@@ -55,4 +55,5 @@ RUN composer create-project symfony/framework-standard-edition symfony
 WORKDIR /www/symfony/
 # Entry point
 EXPOSE 8080
-CMD ["ppm", "start", "--cgi-path=/usr/bin/php7.0-cgi","--bootstrap=Symfony","--bridge=HttpKernel","--socket-path=/root/ppm/run"]
+#CMD ["ppm", "start", "--cgi-path=/usr/bin/php7.0-cgi","--bootstrap=Symfony","--bridge=HttpKernel","--socket-path=/root/ppm/run"]
+CMD ["ppm", "start"]
